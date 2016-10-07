@@ -1,0 +1,85 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L] 
+
+#START - WP Hide & Security Enhancer
+#WriteCheckString:1475747139_90414
+<IfModule mod_env.c>
+SetEnv HTTP_MOD_REWRITE On
+</IfModule>
+
+RewriteRule ^plugins/includes/(.*) /wp-content/plugins/add-admin-css/$1 [L,QSA]
+RewriteRule ^plugins/includes/(.*) /wp-content/plugins/advanced-custom-fields-pro/$1 [L,QSA]
+RewriteRule ^plugins/module/(.*) /wp-content/plugins/contact-form-7/$1 [L,QSA]
+RewriteRule ^plugins/module/(.*) /wp-content/plugins/protect-wp-admin/$1 [L,QSA]
+RewriteRule ^plugins/module/(.*) /wp-content/plugins/responsive-menu/$1 [L,QSA]
+RewriteRule ^plugins/module/(.*) /wp-content/plugins/wordfence/$1 [L,QSA]
+RewriteRule ^plugin/(.*) /wp-content/plugins/$1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-content/plugins(.*) /index.php [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{HTTP_COOKIE} !^.*wordpress_logged_in.*$ [NC]
+RewriteRule ^wp-includes(.*) /index.php [L]
+
+RewriteRule ^includes/(.*) /wp-includes/$1 [L,QSA]
+
+RewriteRule ^my_uploads/(.*) /wp-content/uploads/$1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-content/uploads(.*) /index.php [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} !wp-activate.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-cron.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-signup.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-comments-post.php [NC]
+RewriteCond %{REQUEST_FILENAME} !wp-login.php [NC]
+RewriteRule ^wp-([a-z-])+.php /index.php [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-activate.php /index.php [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-cron.php /index.php [L]
+
+RewriteRule ^user-input.php /wp-comments-post.php [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^wp-comments-post.php /index.php [L]
+
+RewriteRule ^content/(.*) /wp-content/$1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{HTTP_COOKIE} !^.*wordpress_logged_in.*$ [NC]
+RewriteRule ^wp-content(.*) /index.php [L]
+#END - WP Hide & Security Enhancer
+
+RewriteRule ^secretbackend/?$ /wp-login.php [QSA,L]
+RewriteRule ^secretbackend/register/?$ /wp-login.php?action=register [QSA,L]
+RewriteRule ^secretbackend/lostpassword/?$ /wp-login.php?action=lostpassword [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+# BEGIN EWWWIO
+
+# END EWWWIO
+
+# Disable directory browsing
+Options All -Indexes
+
+#Expire Header
+<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|swf)$">
+ExpiresDefault "access plus 2 hours"
+</FilesMatch>
+or
+# Expire images header
+ExpiresActive On
+ExpiresDefault A0
+ExpiresByType image/gif A2592000
+ExpiresByType image/png A2592000
+ExpiresByType image/jpg A2592000
+ExpiresByType image/jpeg A2592000
+ExpiresByType image/ico A2592000
+ExpiresByType text/css A2592000
+ExpiresByType text/javascript A2592000

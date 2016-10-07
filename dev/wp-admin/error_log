@@ -1,0 +1,8 @@
+[04-Oct-2016 11:11:08 UTC] Plugin deactivated..!
+[04-Oct-2016 11:54:01 UTC] Plugin deactivated..!
+[04-Oct-2016 12:47:55 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical-child/functions.php on line 30
+[04-Oct-2016 12:48:13 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical-child/functions.php on line 30
+[04-Oct-2016 12:48:33 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical-child/functions.php on line 30
+[05-Oct-2016 08:31:18 UTC] PHP Fatal error:  Cannot redeclare my_theme_enqueue_styles() (previously declared in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical-child/functions.php:6) in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical/functions.php on line 19
+[05-Oct-2016 08:31:34 UTC] PHP Fatal error:  Cannot redeclare my_theme_enqueue_styles() (previously declared in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical-child/functions.php:6) in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical/functions.php on line 19
+[05-Oct-2016 08:31:37 UTC] PHP Fatal error:  Cannot redeclare my_theme_enqueue_styles() (previously declared in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical-child/functions.php:6) in /home/cjelectrical/public_html/dev/wp-content/themes/cjelectrical/functions.php on line 19
