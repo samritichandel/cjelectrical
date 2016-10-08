@@ -51,7 +51,7 @@ $GLOBALS['phone']=$phone_number;
 					
                     <div class="contact_top">
 						<figure> <i class="fa fa-phone" aria-hidden="true"></i></figure>
-                            <h3><span><?php if($phone_text)  echo $phone_text;?></span><a href="tel:<?php if($phone_number) echo str_replace(' ', '', $phone_number); ?>" class="cont_no" target="_blank"><?php if($phone_number) echo $phone_number ;?></a></h3> 
+                            <h3><span><?php if($phone_text)  echo $phone_text;?></span><a href="tel:<?php if($phone_number) echo str_replace(' ', '', $phone_number); ?>" class="cont_no"><?php if($phone_number) echo $phone_number ;?></a></h3> 
                     </div>
                 </div>
             </div>

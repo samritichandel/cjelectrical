@@ -53,7 +53,7 @@ $fb_link=$custom_settings_footer['Cj_text_field_7'];
                                     <li>
                                         <div class="contact_links">
                                             <figure> <i class="fa fa-phone" aria-hidden="true"></i></figure>
-                                            <h3><span>phone</span><a href="tel:<?php if($phone) echo str_replace(' ', '', $phone); ?>" class="cont_no" target="_blank"><?php if($phone) echo $phone ;?></a></h3> 
+                                            <h3><span>phone</span><a href="tel:<?php if($phone) echo str_replace(' ', '', $phone); ?>" class="cont_no"><?php if($phone) echo $phone ;?></a></h3> 
                                         </div>
                                     </li>
                                      <li>
@@ -190,5 +190,19 @@ if (winWidth >= 991)
             }
         });
     </script>
+	<script>
+	jQuery(document).ready(function () {
+	jQuery('#contact-form-name,#footer-name').keydown(function (e) {
+	if (e.shiftKey || e.ctrlKey || e.altKey) {
+	e.preventDefault();
+	} else {
+	var key = e.keyCode;
+	if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+	e.preventDefault();
+	}
+	}
+	});
+	});
+</script>
 </body>
 </html>

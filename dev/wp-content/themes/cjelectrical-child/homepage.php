@@ -46,7 +46,7 @@ while ( have_posts() ) : the_post();
                 <div class="col-sm-12">
 					
 					<p><?php the_content();?></p>
-					<a href="tel:<?php if($phone)  echo str_replace(' ', '', $phone);?>" title="" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i><span><?php if($phone)  echo $phone;?></span></a> </div>
+					<a href="tel:<?php if($phone)  echo str_replace(' ', '', $phone);?>" title=""><i class="fa fa-phone" aria-hidden="true"></i><span><?php if($phone)  echo $phone;?></span></a> </div>
 			 </div>
         </div>
     </section>
